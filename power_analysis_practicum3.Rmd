@@ -1,5 +1,5 @@
 ---
-title: "practicum_3"
+title: "Practicum 3 - Increased Incentives for Water Savings P4P Program"
 author: "David Segan, Marie Bouffard, Ethan Hoffman"
 date: "5/19/2021"
 output: html_document
@@ -203,10 +203,16 @@ library(kableExtra)
 This functions allows you to declare the characteristics of the population that you want to study.
 
 ```{r population, echo=TRUE}
+
+## STARTED HERE
+
 set.seed(228)
 population <- declare_population(
-  village = add_level(N=500, 
-    wqi=runif(n=N, min=0.38, max=8.21),
+  # population of customers that use atleast 10 million gallons of water (minimum needed to be saved to be eligible for program)
+  customers = add_level(N=10000, 
+    # unit for water_saved is million gallons
+    water_saved=runif(n=N, min=10, max=100),
+## STOPPED HERE
     u=rnorm(n=N, mean=1.1, sd=0.1))
 )
 
